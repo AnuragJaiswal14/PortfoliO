@@ -47,7 +47,7 @@ export const Banner= () =>{
         <Col xs={12} md={6} xl={7}>
             <span className="tagline">Welcome to My Portfolio</span>
             <h1>{`Hi I'm `}<span classNme="wrap ">{text}</span></h1>
-            <p>I'm a 4th Year student majoring in Computer Science in Techno India University. I like to participate in Competetive Coding Competetions along with my problem solving skills in Java. I also a thing for web development using React and would love to be a part of the IT Industry</p>
+            <p>Passionate Software Developer with a B.Tech in Computer Science. Proﬁcient in MERN stack. Adaptable, proactive problem-solver with fast learning ability. Committed to enhancing coding skills and creating exceptional user experiences.</p>
             <a href ="mailto:anujaiswal9087@gmail.com"><button onClick={() =>console.log('connect')}> Let's Connect <ArrowRightCircle size={25}/> </button></a>
         </Col>
         <Col xs={12} md={6} xl={5}>

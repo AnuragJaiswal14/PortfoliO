@@ -1,42 +1,45 @@
 import { Container, Nav, Row, Tab, Col } from "react-bootstrap";
 import { ProjectCard } from "./ProjectCard";
 import colorSharp2 from "../assets/img/color-sharp2.png";
-import projImg1 from "../assets/img/project-img1.png";
+import airbnbimg from "../assets/img/airbnb.png";
+import netfliximg from "../assets/img/netflix.png";
+import amazonimg from "../assets/img/amazon.png";
 import projImg2 from "../assets/img/project-img2.png";
 import projImg3 from "../assets/img/project-img3.png";
 
 export const Projects = () =>{
     const projects = [
         {
-            title: "Business Startup",
-            description:"Design & Development",
-            imgUrl: projImg1,
+            title: "Airbnb Clone",
+            description:"Next.js + Tailwind CSS",
+            imgUrl: airbnbimg,
         },
         {
-            title: "Business Startup",
-            description:"Design & Development",
-            imgUrl: projImg2,
+            title: "Netflix Clone",
+            description:"Reactjs + CSS",
+            imgUrl: netfliximg,
         },
         {
-            title: "Business Startup",
-            description:"Design & Development",
-            imgUrl: projImg3,
-        },
-        {
-            title: "Business Startup",
-            description:"Design & Development",
-            imgUrl: projImg1,
-        },
-        {
-            title: "Business Startup",
-            description:"Design & Development",
-            imgUrl: projImg2,
-        },
-        {
-            title: "Business Startup",
-            description:"Design & Development",
-            imgUrl: projImg3,
-        },
+            title: "Amazon Clone",
+            description:"Reactjs + CSS",
+            imgUrl: amazonimg,
+        }
+        // ,
+        // {
+        //     title: "Business Startup",
+        //     description:"Design & Development",
+        //     imgUrl: projImg2,
+        // },
+        // {
+        //     title: "Business Startup",
+        //     description:"Design & Development",
+        //     imgUrl: projImg2,
+        // },
+        // {
+        //     title: "Business Startup",
+        //     description:"Design & Development",
+        //     imgUrl: projImg3,
+        // },
     ];
     return (
         <section className="project" id="project">
@@ -44,17 +47,17 @@ export const Projects = () =>{
                 <Row>
                     <Col >
                       <h2>Projects</h2>
-                      <p>Description of the project</p>
+                      <p>Diversified range of projects</p>
                       <Tab.Container id="projects-tabs" defaultActiveKey="first">
                         <Nav variant="pills" className="nav-pills mb-5 justify-content-center align-items-center" id="pills-tab" >
                             <Nav.Item>
-                                <Nav.Link eventKey="first">Tab One</Nav.Link>
+                                <Nav.Link eventKey="first">Clones</Nav.Link>
                             </Nav.Item>
                             <Nav.Item>
-                                <Nav.Link eventKey="second">Tab Two</Nav.Link>
+                                <Nav.Link eventKey="second">Machine Learning</Nav.Link>
                             </Nav.Item>
                             <Nav.Item>
-                                <Nav.Link eventKey="third">Tab Three</Nav.Link>
+                                <Nav.Link eventKey="third">Devops</Nav.Link>
                             </Nav.Item>
                         </Nav>
                         <Tab.Content>
@@ -72,8 +75,8 @@ export const Projects = () =>{
                                  }
                             </Row>
                           </Tab.Pane>
-                          <Tab.Pane eventKey="second"> Lorem Ipsum</Tab.Pane>
-                          <Tab.Pane eventKey="third">Lorem Ipsum</Tab.Pane>
+                          <Tab.Pane eventKey="second"> Coming Soon...</Tab.Pane>
+                          <Tab.Pane eventKey="third">Coming Soon....</Tab.Pane>
                         </Tab.Content>
                       </Tab.Container>
                     </Col>
