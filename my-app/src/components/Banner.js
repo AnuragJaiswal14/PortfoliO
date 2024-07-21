@@ -11,7 +11,7 @@ export const Banner= () =>{
     const [text,setText] =useState('');
     const [delta,setDelta] = useState(300-Math.random()*100);
     const period =2000;
-
+   
     useEffect(() =>{
         let ticker = setInterval(()=>{
         tick();
@@ -46,7 +46,7 @@ export const Banner= () =>{
     <Row className="align-items-center">
         <Col xs={12} md={6} xl={7}>
             <span className="tagline">Welcome to My Portfolio</span>
-            <h1>{`Hi I'm `}<span classNme="wrap ">{text}</span></h1>
+            <h1>{`Hi I'm `}<span className="wrap ">{text}</span></h1>
             <p>Passionate Software Developer with a B.Tech in Computer Science. Proﬁcient in MERN stack. Adaptable, proactive problem-solver with fast learning ability. Committed to enhancing coding skills and creating exceptional user experiences.</p>
             <a href ="mailto:anujaiswal9087@gmail.com"><button onClick={() =>console.log('connect')}> Let's Connect <ArrowRightCircle size={25}/> </button></a>
         </Col>

@@ -4,8 +4,9 @@ import "react-multi-carousel/lib/styles.css";
 import meter1 from "../assets/img/meter1.svg";
 import meter2 from "../assets/img/meter2.svg";
 import meter3 from "../assets/img/meter3.svg";
+import React from 'react';
 import colorSharp from "../assets/img/color-sharp.png";
-export const Skills =() =>{
+export const Skills =React.forwardRef((props, ref) =>{
     const responsive = {
         superLargeDesktop: {
           // the naming can be any, depends on you.
@@ -26,7 +27,7 @@ export const Skills =() =>{
         }
       };
     return (
-        <section className="skill" id="skills">
+        <section className="skill" id="skills" ref={ref}>
             <Container>
                 <Row>
                     <Col>
@@ -34,19 +35,19 @@ export const Skills =() =>{
                         <h2>
                             Skills
                         </h2>
-                        <p> Detailed Description based on the skill set on field upon the experience in the projects worked in and the expertise in the internships</p>
+                        <p> Master of Java, Python, JavaScript, and full-stack wizardry with React, Spring Boot, Docker, Kubernetes, and AWS magic. Turning caffeine into code!</p>
                         <Carousel responsive={responsive} infinite={true} class="skill-slider">
-                            <div className="item">
+                            <div className="item Technical Proficiency">
                                 <img src={meter1} alt="Image"/>
-                                <h5> Web Developement</h5>
+                                <h5> Technical Proficiency</h5>
                             </div>
-                            <div className="item">
+                            <div className="item Collaboration and Communication">
                                 <img src={meter2} alt="Image"/>
-                                <h5> Problem Solving</h5>
+                                <h5> Collaboration and Communication</h5>
                             </div>
-                            <div className="item">
+                            <div className="item Project Management and Execution">
                                 <img src={meter3} alt="Image"/>
-                                <h5> Java Coding</h5>
+                                <h5> Project Management and Execution</h5>
                             </div>
 
                         </Carousel>
@@ -58,4 +59,4 @@ export const Skills =() =>{
         </section>
 
     )
-}
+})
