@@ -1,62 +1,91 @@
-import { Container,Row,Col } from "react-bootstrap";
-import Carousel from "react-multi-carousel";
-import "react-multi-carousel/lib/styles.css";
-import meter1 from "../assets/img/meter1.svg";
-import meter2 from "../assets/img/meter2.svg";
-import meter3 from "../assets/img/meter3.svg";
-import React from 'react';
-import colorSharp from "../assets/img/color-sharp.png";
-export const Skills =React.forwardRef((props, ref) =>{
-    const responsive = {
-        superLargeDesktop: {
-          // the naming can be any, depends on you.
-          breakpoint: { max: 4000, min: 3000 },
-          items: 5
-        },
-        desktop: {
-          breakpoint: { max: 3000, min: 1024 },
-          items: 3
-        },
-        tablet: {
-          breakpoint: { max: 1024, min: 464 },
-          items: 2
-        },
-        mobile: {
-          breakpoint: { max: 464, min: 0 },
-          items: 1
-        }
-      };
-    return (
-        <section className="skill" id="skills" ref={ref}>
-            <Container>
-                <Row>
-                    <Col>
-                    <div className="skill-bx">
-                        <h2>
-                            Skills
-                        </h2>
-                        <p> Master of Java, Python, JavaScript, and full-stack wizardry with React, Spring Boot, Docker, Kubernetes, and AWS magic. Turning caffeine into code!</p>
-                        <Carousel responsive={responsive} infinite={true} class="skill-slider">
-                            <div className="item Technical Proficiency">
-                                <img src={meter1} alt="Image"/>
-                                <h5> Technical Proficiency</h5>
-                            </div>
-                            <div className="item Collaboration and Communication">
-                                <img src={meter2} alt="Image"/>
-                                <h5> Collaboration and Communication</h5>
-                            </div>
-                            <div className="item Project Management and Execution">
-                                <img src={meter3} alt="Image"/>
-                                <h5> Project Management and Execution</h5>
-                            </div>
+import React from "react";
+import { Container, Row, Col } from "react-bootstrap";
 
-                        </Carousel>
+export const Skills = React.forwardRef((props, ref) => {
+  const skillDomains = [
+    {
+      title: "Orchestration & Containers",
+      subtitle: "SYSTEM CORE ORBITS",
+      techs: [
+        { name: "Kubernetes", value: 95 },
+        { name: "Docker Containerization", value: 90 },
+        { name: "Helm Chart Management", value: 85 }
+      ]
+    },
+    {
+      title: "Pipelines & GitOps",
+      subtitle: "WARP DRIVE DELIVERY",
+      techs: [
+        { name: "ArgoCD (CD Pipelines)", value: 90 },
+        { name: "Jenkins (CI Pipelines)", value: 92 },
+        { name: "Git Version Control", value: 95 },
+        { name: "Security (SAST/DAST)", value: 80 }
+      ]
+    },
+    {
+      title: "IaC & Scripting Automation",
+      subtitle: "GRAVITATIONAL CONTROL",
+      techs: [
+        { name: "Terraform (IaC)", value: 88 },
+        { name: "Linux Server Admin", value: 92 },
+        { name: "Bash Scripting", value: 90 }
+      ]
+    },
+    {
+      title: "Cloud & Observability",
+      subtitle: "TELEMETRY SENSOR MATRIX",
+      techs: [
+        { name: "AWS Services", value: 90 },
+        { name: "Dynatrace / Prometheus / Grafana", value: 88 },
+        { name: "Database Optimization (MySQL, RDS)", value: 85 }
+      ]
+    }
+  ];
+
+  return (
+    <section className="skill" id="skills" ref={ref}>
+      <Container>
+        <Row className="justify-content-center">
+          <Col lg={10}>
+            <div className="skill-bx">
+              <h2>Tech Telemetry</h2>
+              <p className="mb-5" style={{ color: '#b0adc2' }}>
+                Operational capability overview. Each sector represents loaded tooling metrics, core infrastructure competencies, and automation configurations.
+              </p>
+              
+              <Row className="skills-grid g-4 text-start">
+                {skillDomains.map((domain, index) => (
+                  <Col md={6} key={index}>
+                    <div className="skill-domain-card glassmorphic-panel p-4">
+                      <span className="text-cyan font-monospace mb-1 d-block" style={{ fontSize: '0.75rem', letterSpacing: '2px' }}>
+                        {"// "}{domain.subtitle}
+                      </span>
+                      <h4 className="text-white mb-4" style={{ fontSize: '1.25rem' }}>{domain.title}</h4>
+                      
+                      <ul className="skill-list-tech font-monospace">
+                        {domain.techs.map((tech, techIdx) => (
+                          <li key={techIdx}>
+                            <div className="skill-meta text-muted">
+                              <span className="text-white">{tech.name}</span>
+                              <span className="text-cyan">{tech.value}%</span>
+                            </div>
+                            <div className="skill-progress-orbit">
+                              <div 
+                                className="skill-progress-bar" 
+                                style={{ width: `${tech.value}%` }}
+                              ></div>
+                            </div>
+                          </li>
+                        ))}
+                      </ul>
                     </div>
-                    </Col>
-                </Row>
-            </Container>
-            <img  className="background-image-left" src={colorSharp}/>
-        </section>
-
-    )
-})
+                  </Col>
+                ))}
+              </Row>
+            </div>
+          </Col>
+        </Row>
+      </Container>
+    </section>
+  );
+});
